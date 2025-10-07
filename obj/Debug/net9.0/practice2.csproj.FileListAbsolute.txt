@@ -1,0 +1,14 @@
+/home/user/code/proga3/practice2/bin/Debug/net9.0/practice2
+/home/user/code/proga3/practice2/bin/Debug/net9.0/practice2.deps.json
+/home/user/code/proga3/practice2/bin/Debug/net9.0/practice2.runtimeconfig.json
+/home/user/code/proga3/practice2/bin/Debug/net9.0/practice2.dll
+/home/user/code/proga3/practice2/bin/Debug/net9.0/practice2.pdb
+/home/user/code/proga3/practice2/obj/Debug/net9.0/practice2.GeneratedMSBuildEditorConfig.editorconfig
+/home/user/code/proga3/practice2/obj/Debug/net9.0/practice2.AssemblyInfoInputs.cache
+/home/user/code/proga3/practice2/obj/Debug/net9.0/practice2.AssemblyInfo.cs
+/home/user/code/proga3/practice2/obj/Debug/net9.0/practice2.csproj.CoreCompileInputs.cache
+/home/user/code/proga3/practice2/obj/Debug/net9.0/practice2.dll
+/home/user/code/proga3/practice2/obj/Debug/net9.0/refint/practice2.dll
+/home/user/code/proga3/practice2/obj/Debug/net9.0/practice2.pdb
+/home/user/code/proga3/practice2/obj/Debug/net9.0/practice2.genruntimeconfig.cache
+/home/user/code/proga3/practice2/obj/Debug/net9.0/ref/practice2.dll
