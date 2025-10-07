@@ -12,3 +12,4 @@
 /home/user/code/proga3/practice2/obj/Debug/net9.0/practice2.pdb
 /home/user/code/proga3/practice2/obj/Debug/net9.0/practice2.genruntimeconfig.cache
 /home/user/code/proga3/practice2/obj/Debug/net9.0/ref/practice2.dll
+/home/user/code/proga3/practice2/obj/Debug/net9.0/practice2.sourcelink.json

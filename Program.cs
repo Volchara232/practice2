@@ -15,6 +15,7 @@ namespace Program
 
         public static void Menu()
         {
+            string? choice;
             while (true)
             {
                 Console.WriteLine("\n=== МЕНЮ САДА ===");
@@ -28,7 +29,7 @@ namespace Program
                 Console.WriteLine("0. Выход");
                 Console.Write("Выберите пункт меню: ");
 
-                string choice = Console.ReadLine();
+                choice = Console.ReadLine();
 
                 switch (choice)
                 {
@@ -65,11 +66,15 @@ namespace Program
 
         private static void AddTree()
         {
+            string? input;
+            int typeChoice;
+            double height;
+            Tree tree;
             try
             {
                 Console.WriteLine("\n--- Добавление дерева ---");
                 
-                Tree tree = new Tree();
+                tree = new Tree();
                 
                 Console.WriteLine("Выберите тип дерева:");
                 Console.WriteLine("1. Oak");
@@ -77,8 +82,14 @@ namespace Program
                 Console.WriteLine("3. Birch");
                 Console.WriteLine("4. Maple");
                 Console.Write("Ваш выбор: ");
-                int typeChoice = int.Parse(Console.ReadLine());
-                
+
+                input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Неверный ввод!");
+                    return;
+                }
+                typeChoice = int.Parse(input);
                 tree.Type = typeChoice switch
                 {
                     1 => TreeType.Oak,
@@ -89,11 +100,25 @@ namespace Program
                 };
                 
                 Console.Write("Введите высоту дерева (0-150 м): ");
-                double height = double.Parse(Console.ReadLine());
+
+                input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Неверный ввод!");
+                    return;
+                }
+                height = double.Parse(input);
                 tree.Height = new Height(height);
                 
+                
                 Console.Write("Введите возраст дерева (0-5000 лет): ");
-                tree.Age = int.Parse(Console.ReadLine());
+                input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Неверный ввод!");
+                    return;
+                }
+                tree.Age = int.Parse(input);
                 
                 myGarden.AddPlant(tree);
                 Console.WriteLine("Дерево успешно добавлено!");
@@ -106,11 +131,15 @@ namespace Program
 
         private static void AddShrub()
         {
+            string? input;
+            int typeChoice;
+            double height;
+            Shrub shrub;
             try
             {
                 Console.WriteLine("\n--- Добавление куста ---");
                 
-                Shrub shrub = new Shrub();
+                shrub = new Shrub();
                 
                 Console.WriteLine("Выберите тип куста:");
                 Console.WriteLine("1. Oak");
@@ -118,8 +147,14 @@ namespace Program
                 Console.WriteLine("3. Birch"); 
                 Console.WriteLine("4. Maple");
                 Console.Write("Ваш выбор: ");
-                int typeChoice = int.Parse(Console.ReadLine());
-                
+                input = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Неверный ввод!");
+                    return;
+                }
+                typeChoice = int.Parse(input);  
                 shrub.Type = typeChoice switch
                 {
                     1 => TreeType.Oak,
@@ -130,7 +165,13 @@ namespace Program
                 };
                 
                 Console.Write("Введите высоту куста (0-10 м): ");
-                double height = double.Parse(Console.ReadLine());
+                input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Неверный ввод!");
+                    return;
+                }
+                height = double.Parse(input);
                 shrub.Height = new Height(height);
                 
                 myGarden.AddPlant(shrub);
@@ -144,10 +185,18 @@ namespace Program
 
         private static void CareForTree()
         {
+            int index;
+            string? input;
             try
             {
                 Console.Write("Введите индекс дерева для ухода: ");
-                int index = int.Parse(Console.ReadLine()) - 1;
+                input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Неверный ввод!");
+                    return;
+                }
+                index = int.Parse(input) - 1;
                 myGarden.CareForTree(index);
             }
             catch (Exception ex)
@@ -158,10 +207,18 @@ namespace Program
 
         private static void HarvestFromTree()
         {
+            int index;
+            string? input;
             try
             {
                 Console.Write("Введите индекс дерева для сбора урожая: ");
-                int index = int.Parse(Console.ReadLine()) - 1;
+                input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Неверный ввод!");
+                    return;
+                }
+                index = int.Parse(input) - 1;
                 myGarden.HarvestFromTree(index);
             }
             catch (Exception ex)
@@ -172,11 +229,19 @@ namespace Program
 
         private static void GrowShrub()
         {
+            int index;
+            string? input;
             try
             {
                 myGarden.ShowPlants();
                 Console.Write("Введите индекс куста для роста: ");
-                int index = int.Parse(Console.ReadLine()) - 1;
+                input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Неверный ввод!");
+                    return;
+                }
+                index = int.Parse(input) - 1;
                 
                 var plants = myGarden.GetPlants();
                 if (index >= 0 && index < plants.Count && plants[index] is Shrub shrub)
@@ -196,11 +261,19 @@ namespace Program
 
         private static void DeconstructTree()
         {
+            int index;
+            string? input;
             try
             {
                 myGarden.ShowPlants();
                 Console.Write("Введите индекс дерева для деконструкции: ");
-                int index = int.Parse(Console.ReadLine()) - 1;
+                input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Неверный ввод!");
+                    return;
+                }
+                index = int.Parse(input) - 1;
                 
                 var plants = myGarden.GetPlants();
                 if (index >= 0 && index < plants.Count && plants[index] is Tree tree)
