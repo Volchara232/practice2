@@ -1,10 +1,14 @@
+using Plants;
 namespace Gardens {
 
 public class Garden : IGarden
     {
-        private List<Plants.Plant> plants = new List<Plants.Plant>();
-
-        public void AddPlant(Plants.Plant plant)
+        private List<Plant> plants = new List<Plant>();
+        public List<Plant> GetPlants()
+        {
+            return plants;
+        }
+        public void AddPlant(Plant plant)
         {
             plants.Add(plant);
             Console.WriteLine($"Растение типа {plant.Type} добавлено в сад");
@@ -26,7 +30,7 @@ public class Garden : IGarden
         }
         public void CareForTree(int index)
         {
-            if (index >= 0 && index < plants.Count && plants[index] is Plants.Tree tree)
+            if (index >= 0 && index < plants.Count && plants[index] is Tree tree)
             {
                 tree.Care();
             }
@@ -37,7 +41,7 @@ public class Garden : IGarden
         }
         public void HarvestFromTree(int index)
         {
-            if (index >= 0 && index < plants.Count && plants[index] is Plants.Tree tree)
+            if (index >= 0 && index < plants.Count && plants[index] is Tree tree)
             {
                 tree.Harvest();
             }
